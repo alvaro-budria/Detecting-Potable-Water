@@ -1,3 +1,6 @@
+This document contains an explanation of each variable in the dataset, followed by the notes I've been taking along the analysis process.
+
+
 Content
 The water_potability.csv file contains water quality metrics for 3276 different water bodies.
 
@@ -38,25 +41,24 @@ https://machinelearningmastery.com/framework-for-imbalanced-classification-proje
 
 ## EDA
 
-* NA? missings o errors? 
+* Check for missing values and for errors. The library `pandas_profiling` comes in handy. 
     ```
     # looking at stats
     pandas_profiling.ProfileReport(df)
     ```
-* Hi Ha dades faltants. Suposem MAR, MCAR o MNAR? Visualitzar el problema. Quants i quina proporció de missings per variable? Alguna observació amb moltíssims missings? Imputació per mitjana o eliminació d'observacions/variables? 
+* Plot data distribution. All variables look Gaussian.
 
-* Les variables són totes quantitatives, no cal fer-ne de dummies o mapejar-les :D
-* Ojo, pH es mesura en escala logarítmica.
-
-* Plot data distribution (histograma i corba superposada)
-
-* Bar chart target counts
-
-* tSNE and MDS to assess separability
-
-* 
+* There is no qualitative variable, so there is no need for mapping any variable or creating dummy variables.
 
 * Correlation matrix
+
+* Are classes balanced?
+
+* There are missing values. Do we assume MAR, MCAR or MNAR? How many missings are there per variable and in which proportion? Does some particular observation contain a lot of missing values? Should we delete observations or impute with the median or the mean? 
+
+* Variable pH is measured with a logarithmic scale, while other variables proably measure in linear scale. Perhaps should take this into account to improve the model's performance.
+
+* tSNE and MDS to assess separability
 
 
 ## Spot checking models/algorithms
@@ -87,14 +89,11 @@ https://machinelearningmastery.com/framework-for-imbalanced-classification-proje
 
 * SVM using `class_weight` and `sample_weight`
 
-### Upsampling, downsampling i res
-Provar sense res, amb upsampling i sense upsampling.
 
-
-## Fine-tune models/algorithms
+## Fine-tune promising models/algorithms
 
 ## Choose best model(s)
-
+The metric by which to compare models shall be determined based on the model's output (wether it be probabilities or labels) and the problem at hand (e.g. do we we favor error type I or II?)
 
 
 ## Error Analysis and presentation of results
