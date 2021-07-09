@@ -54,12 +54,11 @@ https://machinelearningmastery.com/framework-for-imbalanced-classification-proje
 
 * Are classes balanced?
 
-* There are missing values. Do we assume MAR, MCAR or MNAR? How many missings are there per variable and in which proportion? Does some particular observation contain a lot of missing values? Should we delete observations or impute with the median or the mean? 
+* There are missing values. Do we assume MAR, MCAR or MNAR? How many missings are there per variable and in which proportion? Does some particular observation contain a lot of missing values? Should we delete observations or impute with the median or the mean or kNN? 
 
 * Variable pH is measured with a logarithmic scale, while other variables proably measure in linear scale. Perhaps should take this into account to improve the model's performance.
 
 * tSNE and MDS to assess separability
-
 
 ## Spot checking models/algorithms
 https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/
@@ -90,10 +89,10 @@ https://machinelearningmastery.com/framework-for-imbalanced-classification-proje
 * SVM using `class_weight` and `sample_weight`
 
 
-## Fine-tune promising models/algorithms
+## Fine-tune promising models/algorithms Choose best model(s)
+I've decided to tune hyperparameters and compare models all in one single step, instead of spotting various models first and then fine-tuning the most promising ones. This allows to fairly compare models with a set of good hyperparameters.
 
-## Choose best model(s)
-The metric by which to compare models shall be determined based on the model's output (wether it be probabilities or labels) and the problem at hand (e.g. do we we favor error type I or II?)
+The metric by which to compare models shall be determined based on the model's output (whether it be probabilities or labels) and the problem at hand (e.g. do we we favor error type I or II?)
 
 
 ## Error Analysis and presentation of results
