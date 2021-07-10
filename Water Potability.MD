@@ -90,7 +90,7 @@ https://machinelearningmastery.com/framework-for-imbalanced-classification-proje
 
 
 ## Fine-tune promising models/algorithms Choose best model(s)
-I've decided to tune hyperparameters and compare models all in one single step, instead of spotting various models first and then fine-tuning the most promising ones. This allows to fairly compare models with a set of good hyperparameters.
+I've decided to tune hyperparameters and compare models all in one single step, instead of spotting various models first and then fine-tuning the most promising ones. This allows to fairly compare models with a set of good hyperparameters. Nonetheless, the chosen model(s) will have to be tuned on the whole training set to predict on the testing set and extract a generalization error.
 
 The metric by which to compare models shall be determined based on the model's output (whether it be probabilities or labels) and the problem at hand (e.g. do we we favor error type I or II?)
 
