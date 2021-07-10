@@ -76,8 +76,6 @@ https://machinelearningmastery.com/framework-for-imbalanced-classification-proje
 * XGBoost
 
 
-## Spot checking models/algorithms for imbalanced datasets
-
 * Random oversampling
 
 * SVM SMOTE
@@ -95,4 +93,4 @@ I've decided to tune hyperparameters and compare models all in one single step, 
 The metric by which to compare models shall be determined based on the model's output (whether it be probabilities or labels) and the problem at hand (e.g. do we we favor error type I or II?)
 
 
-## Error Analysis and presentation of results
+## Error Analysis and presentation of resultsd
