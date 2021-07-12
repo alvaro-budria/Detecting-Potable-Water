@@ -1,7 +1,4 @@
-This document contains an explanation of each variable in the dataset, followed by the notes I've been taking along the analysis process.
-
-
-Content
+# Content
 The water_potability.csv file contains water quality metrics for 3276 different water bodies.
 
 1. pH value:
@@ -33,64 +30,3 @@ The turbidity of water depends on the quantity of solid matter present in the su
 
 10. Potability:
 Indicates if water is safe for human consumption where 1 means Potable and 0 means Not potable.
-
-
-## Choose metric
-https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/
-
-
-## EDA
-
-* Check for missing values and for errors. The library `pandas_profiling` comes in handy. 
-    ```
-    # looking at stats
-    pandas_profiling.ProfileReport(df)
-    ```
-* Plot data distribution. All variables look Gaussian.
-
-* There is no qualitative variable, so there is no need for mapping any variable or creating dummy variables.
-
-* Correlation matrix
-
-* Are classes balanced?
-
-* There are missing values. Do we assume MAR, MCAR or MNAR? How many missings are there per variable and in which proportion? Does some particular observation contain a lot of missing values? Should we delete observations or impute with the median or the mean or kNN? 
-
-* Variable pH is measured with a logarithmic scale, while other variables proably measure in linear scale. Perhaps should take this into account to improve the model's performance.
-
-* tSNE and MDS to assess separability
-
-## Spot checking models/algorithms
-https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/
-
-* QDA
-* Logistic regression
-
-* SVM
-* Kernel SVM
-* Decision tree
-* kNN
-* MLP
-
-* Random forest
-* XGBoost
-
-
-* Random oversampling
-
-* SVM SMOTE
-
-* SMOTE and Random undersampling
-
-* Weighted logistic regression
-
-* SVM using `class_weight` and `sample_weight`
-
-
-## Fine-tune promising models/algorithms Choose best model(s)
-I've decided to tune hyperparameters and compare models all in one single step, instead of spotting various models first and then fine-tuning the most promising ones. This allows to fairly compare models with a set of good hyperparameters. Nonetheless, the chosen model(s) will have to be tuned on the whole training set to predict on the testing set and extract a generalization error.
-
-The metric by which to compare models shall be determined based on the model's output (whether it be probabilities or labels) and the problem at hand (e.g. do we we favor error type I or II?)
-
-
-## Error Analysis and presentation of resultsd
